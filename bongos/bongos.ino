@@ -5,18 +5,18 @@ CGamecubeConsole gc(2);
 CGamecubeController gcc(3);
 
 void setup() {
-  Serial.begin(115200);
-  while (!Serial) {}
 }
 
 void loop() {
   gcc.read();
-  Gamecube_Report_t report = gcc.getReport();
-  if (report.xAxis == 0x00) {
-    report.xAxis = 0x80;
-    report.yAxis = 0x80;
-    report.cxAxis = 0x80;
-    report.cyAxis = 0x80;
+  Gamecube_Report_t input = gcc.getReport();
+  Gamecube_Report_t output = input;
+  bool isBongos = input.xAxis == 0x00;
+  if (isBongos) {
+    output.xAxis = 0x80;
+    output.yAxis = 0x80;
+    output.cxAxis = 0x80;
+    output.cyAxis = 0x80;
   }
-  gc.write(report);
+  gc.write(output);
 }
