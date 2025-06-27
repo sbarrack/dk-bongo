@@ -1,5 +1,6 @@
-#include <Nintendo.h>
-// #include <Wire.h>
+#include <Wire.h>  // I2C/TWI
+
+#include <Nintendo.h>  // Nicohood
 
 CGamecubeConsole gc(2);
 CGamecubeController gcc(3);
