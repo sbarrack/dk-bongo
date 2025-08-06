@@ -1,4 +1,4 @@
-# DK Bongos (and Other Nintendo Controllers)
+# DK Bongos
 
 &copy; 2018-2025 Stephen Barrack
 
