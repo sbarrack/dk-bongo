@@ -12,7 +12,7 @@ I am not offering any license to this repository at this time. Please be patient
 * DK Bongos
 * 2 Wii nunchucks
 
-## Optional
+### Optional
 
 I strongly recommend these so that you don't have to permanently affix your controllers to the Arduino.
 
