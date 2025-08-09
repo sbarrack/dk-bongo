@@ -33,6 +33,7 @@ I strongly recommend these so that you don't have to permanently affix your cont
 ```sh
 sudo apt install teensy-loader-cli
 sudo curl -o /etc/udev/rules.d/00-teensy.rules https://www.pjrc.com/teensy/00-teensy.rules
+sudo cat 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[7-9]?", GOTO="nm_modem_probe_end"' >> /lib/udev/rules.d/77-nm-probe-modem-capabilities.rules
 ```
 
 * [ ] Wiring guide comming soon™
