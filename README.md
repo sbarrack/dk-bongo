@@ -8,23 +8,25 @@ I am not offering any license to this repository at this time. Please be patient
 
 * Teensy 3.2
 * USB cable
-* Soldering/breadboarding accoutrement
+* Soldering/bread-boarding accoutrement
 * DK Bongos
-* 2 Wii nunchucks
+* 0-2 Wii Remote attachments
+    * Solo or dual Nunchucks
+    * Guitar
 
 ### Optional
 
-I strongly recommend these so that you don't have to permanently affix your controllers to the Arduino.
+I strongly recommend these so that you don't have to permanently affix your controllers to the Arduino. Cut them in half and solder/connect the female ends to the Teensy.
 
-* 1 GCC extension cord
-* 2 Wii remote extension cords
+* 1 GameCube controller extension cord
+* 0-2 Wii remote extension cords
 
 ### Non-supplies
 
 * Pull-up/down resistors
-    * All of the controllers already have these :)
+    * All of the controllers already have these :D
 * Digital logic-level converter(s)
-    * Teensy 3.2 is 5V tolerant :)
+    * Teensy 3.2 is 5V tolerant :D
 
 ## Setup
 
