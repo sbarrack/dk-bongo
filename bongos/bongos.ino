@@ -7,6 +7,8 @@
 #define E_I2C_TX_VALUE_NACK         3
 #define E_I2C_TX_UNKNOWN            4
 
+// TODO Find c_cpp_properties.json in the git history and see if it's helpful.
+
 // https://wiibrew.org/wiki/Wiimote/Extension_Controllers
 #define I2C_SLAVE_ADDRESS_WII_ATTACHMENT 0x52
 /**
