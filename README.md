@@ -16,10 +16,11 @@ I am not offering any license to this repository at this time. Please be patient
 
 ### Optional
 
-I strongly recommend these so that you don't have to permanently affix your controllers to the Arduino. Cut them in half and solder/connect the female ends to the Teensy.
+I strongly recommend these so that you don't have to permanently affix your controllers to the Arduino. Cut them in half and solder/connect each end to the Teensy.
 
 * 1 GameCube controller extension cord
 * 0-2 Wii remote extension cords
+    * You only need the female ends of these.
 
 ### Non-supplies
 
