@@ -57,15 +57,18 @@ bool decrypt(TwoWire &i2c) {
 }
 
 void setup() {
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, HIGH);
+    
+    Serial.begin(115200);
+    // make && sleep 1 && screen /dev/ttyACM0 115200
+
     // Fast mode
     Wire.setClock(400000);
     Wire1.setClock(400000);
 
     Wire.begin();
     Wire1.begin();
-    
-    Serial.begin(115200);
-    // make && sleep 1 && screen /dev/ttyACM0 115200
 }
 
 bool isEncrypted = true;
@@ -100,6 +103,7 @@ void loop() {
                 return;
             }
         }
+        digitalWrite(LED_BUILTIN, LOW);
     } else {
         Wire.beginTransmission(I2C_SLAVE_ADDRESS_WII_ATTACHMENT);
         Wire.write(0x00); // fe 00 poll
@@ -129,5 +133,4 @@ void loop() {
     }
 
     Serial.println(loopTime);
-    delay(200);
 }
