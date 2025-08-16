@@ -47,11 +47,11 @@ bool decrypt(TwoWire &i2c) {
         return false;
     }
 
-    i2c.beginTransmission(I2C_SLAVE_ADDRESS_WII_ATTACHMENT);
-    i2c.write(0xFB);
-    i2c.write(0x00);
-    errorCode = i2c.endTransmission();
-    delayMicroseconds(I2C_TX_GRACE_TIME_MICROS);
+    // i2c.beginTransmission(I2C_SLAVE_ADDRESS_WII_ATTACHMENT);
+    // i2c.write(0xFB);
+    // // i2c.write(0x00);
+    // errorCode = i2c.endTransmission();
+    // delayMicroseconds(I2C_TX_GRACE_TIME_MICROS);
 
     return errorCode == E_I2C_TX_SUCCESS;
 }
@@ -82,7 +82,6 @@ void loop() {
     if (!isNunchuck) {
         Wire.beginTransmission(I2C_SLAVE_ADDRESS_WII_ATTACHMENT);
         Wire.write(0xFA);
-        Wire.write(0x00);
         if (Wire.endTransmission() != 0) return;
         delayMicroseconds(200);
 
@@ -106,7 +105,7 @@ void loop() {
         digitalWrite(LED_BUILTIN, LOW);
     } else {
         Wire.beginTransmission(I2C_SLAVE_ADDRESS_WII_ATTACHMENT);
-        Wire.write(0x00); // fe 00 poll
+        Wire.write(0x00); // 00 poll
         if (Wire.endTransmission() != 0) {
             return;
         }
