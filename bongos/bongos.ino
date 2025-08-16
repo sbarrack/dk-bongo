@@ -24,6 +24,8 @@
 // The 0x00 bytes after the controller data (i.e. addr &0x06-0x14) might actually be for more controller data if there were any.
 // Idk what the weird repeating sequence from &0x1f-0x3e is. Weird that it's not perfectly aligned.
 // 72 bytes is the max it lets me read in one request.
+// TODO try writing data format
+// LATER once i fix the frayed guitar cable, also dump that
 
 #define E_I2C_TX_SUCCESS            0
 #define E_I2C_TX_BUFFER_OVERFLOW    1
