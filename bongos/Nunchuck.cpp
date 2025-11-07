@@ -64,7 +64,7 @@ void Nunchuck::loop() {
     if (isPolling) {
         Packet p;
 
-        // I don't do `while (Wire.available() > 0)` because the controller
+        // I don't do `while (i2c.available() > 0)` because the controller
         // ALWAYS has bytes available. They're just all null (0xFF) until it
         // has had enough time to write the input data. Also, I can't get an
         // index that way.
@@ -73,8 +73,8 @@ void Nunchuck::loop() {
         // in the index initializer and avoid doing a function call every
         // iteration. I do have to initialize `raw` backwards, but it hits the
         // right balance of reliability and performance for me.
-        for (int i = Wire.requestFrom(SLAVE, sizeof(p.raw)) - 1; i >= 0; i--) {
-            p.raw[i] = Wire.read();
+        for (int i = i2c.requestFrom(SLAVE, sizeof(p.raw)) - 1; i >= 0; i--) {
+            p.raw[i] = i2c.read();
         }
         c = !p.c;
         z = !p.z;
