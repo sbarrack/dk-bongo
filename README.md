@@ -21,6 +21,7 @@ I strongly recommend these so that you don't have to permanently affix your cont
 * 1 GameCube controller extension cord
 * 0-2 Wii remote extension cords
     * You only need the female ends of these.
+* [Saleae digital logic analyzer](https://www.amazon.com/dp/B077LSG5P2?th=1)
 
 ### Non-supplies
 
@@ -34,7 +35,8 @@ I strongly recommend these so that you don't have to permanently affix your cont
 * Cut the trace between Vusb & Vin.
 
 ```sh
-sudo apt install teensy-loader-cli
+sudo aptitude install teensy-loader-cli
+sudo aptitude install sigrok-firmware-fx2lafw pulseview # (Optional) For logic analyzer
 sudo curl -o /etc/udev/rules.d/00-teensy.rules https://www.pjrc.com/teensy/00-teensy.rules
 sudo cat 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[7-9]?", GOTO="nm_modem_probe_end"' >> /lib/udev/rules.d/77-nm-probe-modem-capabilities.rules
 ```
@@ -48,4 +50,8 @@ sudo cat 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[7-9]
 cd bongos
 make
 # Press the Teensy's restart button when prompted.
+
+# For analyzing:
+pulseview
+# Set sample rate to 1MHz
 ```
